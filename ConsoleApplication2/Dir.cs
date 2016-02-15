@@ -25,9 +25,30 @@ namespace ConsoleApplication2
             Directory.SetCurrentDirectory(input);
             Console.WriteLine(Directory.GetCurrentDirectory());
         }
-        public override void Excute()
+        public override void Excute(string input)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            try
+            {
+                string[] command = input.Split(' ');
+                DirectoryInfo di = new DirectoryInfo(GetCurrentDictionary());
+                DirectoryInfo[] directories = di.GetDirectories();
+                FileInfo[] fis = di.GetFiles(command[1]);
+                foreach(var item in directories)
+                {
+                    Output(item.Name);
+                }
+                foreach(var item in fis)
+                {
+                    Output(item.Name);
+                }
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
         }
     }
 }

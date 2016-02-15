@@ -10,8 +10,11 @@ namespace ConsoleApplication2
     {
         static void Main(string[] args)
         {
-            ChangeDictionary cd = new ChangeDictionary();
-            cd.Excute();
+            //ChangeDictionary cd = new ChangeDictionary();
+            //cd.Excute();
+            string input = Console.ReadLine();
+            Dir dir = new Dir();
+            dir.Excute(input);
             Console.ReadLine();
         }
     }

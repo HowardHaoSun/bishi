@@ -10,7 +10,7 @@ namespace ConsoleApplication2
 
         public abstract string Input();
 
-        public abstract void Excute();
+        public abstract void Excute(string input);
         public abstract void SetCurDirectory(string input);
        
     }

@@ -21,11 +21,10 @@ namespace ConsoleApplication2
             Directory.SetCurrentDirectory(input);
             Console.WriteLine(Directory.GetCurrentDirectory());
         }
-        public override void Excute()
+        public override void Excute(string input)
         {
-            try{
-                string inputStr = this.Input();
-                string[] command = inputStr.Split(' ');
+            try{                
+                string[] command = input.Split(' ');
                 DirectoryInfo di = new DirectoryInfo(GetCurrentDictionary());
                 if (command.Length == 1 && command[0].EndsWith(".."))
                 {
