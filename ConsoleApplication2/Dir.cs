@@ -5,12 +5,7 @@ namespace ConsoleApplication2
     public class Dir : CommandExcute
     {
         
-        public override void ErrorMessage(string error)
-        {
-            //throw new NotImplementedException();
-            Console.WriteLine("Cannot make Dir for you. The error messages are as follows:");
-            Console.WriteLine(error);
-        }
+       
        
         private string GetCurrentDirectory()
         {
@@ -43,7 +38,7 @@ namespace ConsoleApplication2
             }
             catch(Exception ex)
             {
-                ErrorMessage(ex.Message);
+                Console.WriteLine(ex.Message);
             }
 
         }

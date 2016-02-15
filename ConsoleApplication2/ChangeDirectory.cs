@@ -4,13 +4,7 @@ namespace ConsoleApplication2
 {
     public class ChangeDirectory : CommandExcute
     {
-        public override void ErrorMessage(string error)
-        {
-            //throw new NotImplementedException();
-            Console.WriteLine("Can not Change Directory for you. The error messages are as follows:");
-            Console.WriteLine(error);
-        }
-
+        
         private string GetCurrentDirectory()
         {
             return Directory.GetCurrentDirectory();
@@ -39,7 +33,7 @@ namespace ConsoleApplication2
             }
             catch(Exception ex)
             {
-                ErrorMessage(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

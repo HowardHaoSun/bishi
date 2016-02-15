@@ -8,12 +8,7 @@ namespace ConsoleApplication2
 {
     public class DeletesFile:CommandExcute
     {
-        public override void ErrorMessage(string error)
-        {
-            //throw new NotImplementedException();
-            Console.WriteLine("Can not Delete file for you. The error messages are as follows:");
-            Console.WriteLine(error);
-        }
+       
 
         private void DeleteFiles(string path)
         {
@@ -36,7 +31,7 @@ namespace ConsoleApplication2
             }
             catch (Exception ex)
             {
-                ErrorMessage(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

@@ -56,9 +56,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RenameFileFactory.cs" />
+    <Compile Include="RemoveDirectoryFactory.cs" />
+    <Compile Include="MoveFactory.cs" />
+    <Compile Include="MakeDirectoryFactory.cs" />
+    <Compile Include="DirFactory.cs" />
+    <Compile Include="DeletesFileFactory.cs" />
+    <Compile Include="CopyFactory.cs" />
+    <Compile Include="CDFactory.cs" />
     <Compile Include="CommandExcute.cs" />
     <Compile Include="ChangeDirectory.cs" />
     <Compile Include="DeletesFile.cs" />
+    <Compile Include="Factory.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="Copy.cs" />
     <Compile Include="Dir.cs" />

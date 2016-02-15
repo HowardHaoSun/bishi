@@ -15,10 +15,12 @@ namespace ConsoleApplication2
         {
             Console.Write(Directory.GetCurrentDirectory()+">");
             string input = Console.ReadLine();
+            Factory factory;
             CommandExcute ce;
             if(input.ToLower().StartsWith("cd"))
             {
-                ce = new ChangeDirectory();
+                factory = new CDFactory();
+                ce = factory.CreateFacory();
                 ce.Excute(input);
             }
             else
@@ -27,31 +29,38 @@ namespace ConsoleApplication2
                 switch (command)
                 {
                     case "copy":
-                        ce = new Copy();
+                        factory = new CopyFactory();
+                        ce = factory.CreateFacory();
                         ce.Excute(input);
                         break;
                     case "dir":
-                        ce = new Dir();
+                        factory = new DirFactory();
+                        ce = factory.CreateFacory();
                         ce.Excute(input);
                         break;
                     case "md":
-                        ce = new MakeDirectory();
+                        factory = new MakeDirectoryFactory();
+                        ce = factory.CreateFacory();
                         ce.Excute(input);
                         break;
                     case "rd":
-                        ce = new RemoveDirectory();
+                        factory = new RemoveDirectoryFactory();
+                        ce = factory.CreateFacory();
                         ce.Excute(input);
                         break;
                     case "move":
-                        ce = new Move();
-                        ce.Excute(input);
+                        factory = new MoveFactory();
+                        ce = factory.CreateFacory();
+                        ce.Excute(input);                        
                         break;
                     case "del":
-                        ce = new DeletesFile();
+                        factory = new RemoveDirectoryFactory();
+                        ce = factory.CreateFacory();
                         ce.Excute(input);
                         break;
                     case "rename":
-                        ce = new RenameFile();
+                        factory = new RenameFileFactory();
+                        ce = factory.CreateFacory();
                         ce.Excute(input);
                         break;
                     default:
@@ -59,8 +68,7 @@ namespace ConsoleApplication2
                         break;
                 }
             }
-            
-            
+                       
             processor();
         }
     }

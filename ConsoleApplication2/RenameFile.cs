@@ -3,15 +3,11 @@ using System.IO;
 namespace ConsoleApplication2
 {
     public class RenameFile:CommandExcute
-    {
-        public override void ErrorMessage(string error)
+    {       
+       
+        private void Rename(string from, string to)
         {
-            //throw new NotImplementedException();
-            Console.WriteLine("Can not Rename file for you. The error messages are as follows:");
-            Console.WriteLine(error);
-        }
-        private void RenameFiles(string from, string to)
-        {
+
             string source = "";
             if (from.Substring(0, from.LastIndexOf('\\') + 1) == "")
                 source = Directory.GetCurrentDirectory();
@@ -25,32 +21,16 @@ namespace ConsoleApplication2
             {
                 foreach (var item in di.GetFiles(files))
                 {
-                    item.MoveTo(source + "\\" + item.Name.Split('.')[0] + "." + newFileName[1]);                    
+                    item.MoveTo(source + "\\" + item.Name.Split('.')[0] + "." + newFileName[1]);
                 }
             }
             else
             {
                 foreach (var item in di.GetFiles(files))
                 {
-                    item.MoveTo(source + "\\" + newFile);                    
+                    item.MoveTo(source + "\\" + newFile);
                 }
             }
-        }
-        private void Rename(string from, string to)
-        {
-           
-            if(Directory.Exists(from))
-            {
-                DirectoryInfo di = new DirectoryInfo(from);
-                di.MoveTo(to);
-               
-            }
-            else
-            {
-                this.RenameFiles(from,to);
-                
-            }
-            
             
         }
         public override void Excute(string input)
@@ -66,7 +46,7 @@ namespace ConsoleApplication2
             }
             catch (Exception ex)
             {
-                ErrorMessage(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }

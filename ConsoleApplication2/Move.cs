@@ -4,12 +4,6 @@ namespace ConsoleApplication2
 {
     public class Move : CommandExcute
     {        
-        public override void ErrorMessage(string error)
-        {
-            //throw new NotImplementedException();
-            Console.WriteLine("Can not Copy file for you. The error messages are as follows:");
-            Console.WriteLine(error);
-        }
         private void CreateDirectory(string path)
         {
             DirectoryInfo di = new DirectoryInfo(path);
@@ -43,7 +37,7 @@ namespace ConsoleApplication2
             }
             catch(Exception ex)
             {
-                ErrorMessage(ex.Message);
+                Console.WriteLine(ex.Message);
             }
         }
     }
