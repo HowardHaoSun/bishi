@@ -1,29 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 namespace ConsoleApplication2
 {
-    public class Dir:BasicIO
+    public class Dir : AbstractFactory
     {
-        public override string Input()
+        
+        public override void ErrorMessage(string error)
         {
-            return Console.ReadLine();
+            //throw new NotImplementedException();
+            Console.WriteLine("Cannot make Dir for you. The error messages are as follows:");
+            Console.WriteLine(error);
         }
-        public override void Output(string input)
-        {
-            Console.WriteLine(input);
-        }
-        public override string GetCurrentDictionary()
+       
+        private string GetCurrentDirectory()
         {
             return Directory.GetCurrentDirectory();
         }
-        public override void SetCurDirectory(string input)
+        private void GetSubDiretories(string path, string pattern)
         {
-            Directory.SetCurrentDirectory(input);
-            Console.WriteLine(Directory.GetCurrentDirectory());
+
+            foreach (var item in Directory.GetDirectories(path, pattern))
+            {
+                Console.WriteLine(item);
+            }
+        }
+        private void GetFiles(string path, string pattern)
+        {
+            foreach(var item in Directory.GetFiles(path,pattern))
+            {
+                Console.WriteLine(item);
+            }
         }
         public override void Excute(string input)
         {
@@ -31,22 +37,14 @@ namespace ConsoleApplication2
             try
             {
                 string[] command = input.Split(' ');
-                DirectoryInfo di = new DirectoryInfo(GetCurrentDictionary());
-                DirectoryInfo[] directories = di.GetDirectories();
-                FileInfo[] fis = di.GetFiles(command[1]);
-                foreach(var item in directories)
-                {
-                    Output(item.Name);
-                }
-                foreach(var item in fis)
-                {
-                    Output(item.Name);
-                }
+                DirectoryInfo di = new DirectoryInfo(GetCurrentDirectory());               
+                this.GetSubDiretories(di.FullName, command[1]);
+                this.GetFiles(di.FullName, command[1]);               
 
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                ErrorMessage(ex.Message);
             }
 
         }
