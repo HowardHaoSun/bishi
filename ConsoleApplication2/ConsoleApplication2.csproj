@@ -56,7 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory.cs" />
+    <Compile Include="CommandExcute.cs" />
     <Compile Include="ChangeDirectory.cs" />
     <Compile Include="DeletesFile.cs" />
     <Compile Include="Move.cs" />

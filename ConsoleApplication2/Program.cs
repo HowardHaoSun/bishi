@@ -15,10 +15,11 @@ namespace ConsoleApplication2
         {
             Console.Write(Directory.GetCurrentDirectory()+">");
             string input = Console.ReadLine();
+            CommandExcute ce;
             if(input.ToLower().StartsWith("cd"))
             {
-                ChangeDirectory cd = new ChangeDirectory();
-                cd.Excute(input);
+                ce = new ChangeDirectory();
+                ce.Excute(input);
             }
             else
             {
@@ -26,32 +27,32 @@ namespace ConsoleApplication2
                 switch (command)
                 {
                     case "copy":
-                        Copy copy = new Copy();
-                        copy.Excute(input);
+                        ce = new Copy();
+                        ce.Excute(input);
                         break;
                     case "dir":
-                        Dir dir = new Dir();
-                        dir.Excute(input);
+                        ce = new Dir();
+                        ce.Excute(input);
                         break;
                     case "md":
-                        MakeDirectory md = new MakeDirectory();
-                        md.Excute(input);
+                        ce = new MakeDirectory();
+                        ce.Excute(input);
                         break;
                     case "rd":
-                        RemoveDirectory rd = new RemoveDirectory();
-                        rd.Excute(input);
+                        ce = new RemoveDirectory();
+                        ce.Excute(input);
                         break;
                     case "move":
-                        Move move = new Move();
-                        move.Excute(input);
+                        ce = new Move();
+                        ce.Excute(input);
                         break;
                     case "del":
-                        DeletesFile del = new DeletesFile();
-                        del.Excute(input);
+                        ce = new DeletesFile();
+                        ce.Excute(input);
                         break;
                     case "rename":
-                        RenameFile rename = new RenameFile();
-                        rename.Excute(input);
+                        ce = new RenameFile();
+                        ce.Excute(input);
                         break;
                     default:
 

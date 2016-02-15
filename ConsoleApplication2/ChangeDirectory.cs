@@ -2,7 +2,7 @@
 using System.IO;
 namespace ConsoleApplication2
 {
-    public class ChangeDirectory : AbstractFactory
+    public class ChangeDirectory : CommandExcute
     {
         public override void ErrorMessage(string error)
         {

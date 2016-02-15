@@ -2,7 +2,7 @@
 using System.IO;
 namespace ConsoleApplication2
 {
-    public class Dir : AbstractFactory
+    public class Dir : CommandExcute
     {
         
         public override void ErrorMessage(string error)
@@ -18,7 +18,6 @@ namespace ConsoleApplication2
         }
         private void GetSubDiretories(string path, string pattern)
         {
-
             foreach (var item in Directory.GetDirectories(path, pattern))
             {
                 Console.WriteLine(item);
