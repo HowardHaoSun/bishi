@@ -5,7 +5,10 @@ namespace ConsoleApplication2
 {
     public class RemoveDirectory:CommandExcute
     {
-               
+        /// <summary>
+        /// Execute RD command
+        /// </summary>
+        /// <param name="input"></param>      
         public override void Excute(string input)
         {
             try

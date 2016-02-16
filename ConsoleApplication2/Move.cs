@@ -4,6 +4,10 @@ namespace ConsoleApplication2
 {
     public class Move : CommandExcute
     {        
+        /// <summary>
+        /// if file(s) is moved to a nonexistent directory, then create the folder
+        /// </summary>
+        /// <param name="path"></param>
         private void CreateDirectory(string path)
         {
             DirectoryInfo di = new DirectoryInfo(path);
@@ -12,6 +16,12 @@ namespace ConsoleApplication2
                 di.Create();
             }
         }
+        /// <summary>
+        /// Move file(s) from source to destination folder
+        /// matches single responsibility Principle
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
         private void MoveFiles(string from, string to)
         {
             this.CreateDirectory(to);
@@ -24,6 +34,10 @@ namespace ConsoleApplication2
                 item.MoveTo(to + "\\" + item.Name);
             }
         }
+        /// <summary>
+        /// Execute Move command
+        /// </summary>
+        /// <param name="input"></param>
         public override void Excute(string input)
         {
             //throw new NotImplementedException();

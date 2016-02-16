@@ -3,7 +3,13 @@ using System.IO;
 namespace ConsoleApplication2
 {
     public class RenameFile:CommandExcute
-    {       
+    {
+        /// <summary>
+        /// rename file(s) from source to destination name
+        /// matches single responsibility Principle
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
        
         private void Rename(string from, string to)
         {
@@ -33,6 +39,10 @@ namespace ConsoleApplication2
             }
             
         }
+        /// <summary>
+        /// Execute rename command
+        /// </summary>
+        /// <param name="input"></param>
         public override void Excute(string input)
         {
             //throw new NotImplementedException();

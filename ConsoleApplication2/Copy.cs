@@ -5,7 +5,11 @@ namespace ConsoleApplication2
     public class Copy : CommandExcute
     {
         
-       
+       /// <summary>
+       /// if Copy file to a nonexistent folder, create the folder
+       /// 
+       /// </summary>
+       /// <param name="path"></param>
         private void CreateDirectory(string path)
         {
             DirectoryInfo di = new DirectoryInfo(path);
@@ -14,6 +18,12 @@ namespace ConsoleApplication2
                 di.Create();
             }
         }
+        /// <summary>
+        /// Copy file(s)  from source folder to destination folder
+        /// matches single responsibility Principle
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
         private void CopyFiles(string from, string to)
         {
             this.CreateDirectory(to);
@@ -26,6 +36,10 @@ namespace ConsoleApplication2
                 item.CopyTo(to + "\\" + item.Name,true);
             }
         }
+        /// <summary>
+        /// Execute Copy command
+        /// </summary>
+        /// <param name="input"></param>
         public override void Excute(string input)
         {
             //throw new NotImplementedException();

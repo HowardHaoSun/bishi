@@ -3,7 +3,11 @@ using System.IO;
 namespace ConsoleApplication2
 {
     public class ChangeDirectory : CommandExcute
-    {        
+    {  
+        /// <summary>
+        /// Execute CD command
+        /// </summary>
+        /// <param name="input"></param>
 
         public override void Excute(string input)
         {

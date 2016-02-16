@@ -3,9 +3,13 @@ using System.IO;
 namespace ConsoleApplication2
 {
     public class Dir : CommandExcute
-    {
-            
-       
+    {         
+       /// <summary>
+        /// Get sub directories in user assigned directory base on search pattern.
+        /// matches single responsibility Principle
+       /// </summary>
+       /// <param name="path"></param>
+       /// <param name="pattern"></param>
        
         private void GetSubDiretories(string path, string pattern)
         {
@@ -14,6 +18,12 @@ namespace ConsoleApplication2
                 Console.WriteLine(item);
             }
         }
+        /// <summary>
+        /// Get file(s) in user assigned directory base on search pattern.
+        /// matches single responsibility Principle
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="pattern"></param>
         private void GetFiles(string path, string pattern)
         {
             foreach(var item in Directory.GetFiles(path,pattern))
@@ -21,6 +31,10 @@ namespace ConsoleApplication2
                 Console.WriteLine(item);
             }
         }
+        /// <summary>
+        /// Execute Dir command
+        /// </summary>
+        /// <param name="input"></param>
         public override void Excute(string input)
         {
             //throw new NotImplementedException();

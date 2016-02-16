@@ -9,7 +9,11 @@ namespace ConsoleApplication2
     public class DeletesFile:CommandExcute
     {
        
-
+        /// <summary>
+        /// Delete File(s) from input path
+        /// matches single responsibility Principle
+        /// </summary>
+        /// <param name="path"></param>
         private void DeleteFiles(string path)
         {
 
@@ -21,6 +25,11 @@ namespace ConsoleApplication2
                 item.Delete();
             }
         }
+        /// <summary>
+        /// Execute Del command
+        /// </summary>
+        /// <param name="input"></param>
+
         public override void Excute(string input)
         {
             //throw new NotImplementedException();

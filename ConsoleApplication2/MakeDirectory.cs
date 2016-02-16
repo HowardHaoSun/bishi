@@ -5,7 +5,10 @@ namespace ConsoleApplication2
 {
     public class MakeDirectory : CommandExcute
     {
-              
+        /// <summary>
+        /// Execute MD command
+        /// </summary>
+        /// <param name="input"></param>      
 
         public override void Excute(string input)
         {
