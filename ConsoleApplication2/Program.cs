@@ -20,7 +20,7 @@ namespace ConsoleApplication2
             if(input.ToLower().StartsWith("cd"))
             {
                 factory = new CDFactory();
-                ce = factory.CreateFacory();
+                ce = factory.CreateFactory();
                 ce.Excute(input);
             }
             else
@@ -30,37 +30,37 @@ namespace ConsoleApplication2
                 {
                     case "copy":
                         factory = new CopyFactory();
-                        ce = factory.CreateFacory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);
                         break;
                     case "dir":
                         factory = new DirFactory();
-                        ce = factory.CreateFacory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);
                         break;
                     case "md":
                         factory = new MakeDirectoryFactory();
-                        ce = factory.CreateFacory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);
                         break;
                     case "rd":
                         factory = new RemoveDirectoryFactory();
-                        ce = factory.CreateFacory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);
                         break;
                     case "move":
                         factory = new MoveFactory();
-                        ce = factory.CreateFacory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);                        
                         break;
                     case "del":
-                        factory = new RemoveDirectoryFactory();
-                        ce = factory.CreateFacory();
+                        factory = new DeletesFileFactory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);
                         break;
                     case "rename":
                         factory = new RenameFileFactory();
-                        ce = factory.CreateFacory();
+                        ce = factory.CreateFactory();
                         ce.Excute(input);
                         break;
                     default:
