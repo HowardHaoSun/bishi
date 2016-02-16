@@ -4,13 +4,9 @@ namespace ConsoleApplication2
 {
     public class Dir : CommandExcute
     {
-        
+            
        
        
-        private string GetCurrentDirectory()
-        {
-            return Directory.GetCurrentDirectory();
-        }
         private void GetSubDiretories(string path, string pattern)
         {
             foreach (var item in Directory.GetDirectories(path, pattern))
@@ -31,7 +27,7 @@ namespace ConsoleApplication2
             try
             {
                 string[] command = input.Split(' ');
-                DirectoryInfo di = new DirectoryInfo(GetCurrentDirectory());               
+                DirectoryInfo di = new DirectoryInfo(Directory.GetCurrentDirectory());               
                 this.GetSubDiretories(di.FullName, command[1]);
                 this.GetFiles(di.FullName, command[1]);               
 
